@@ -101,9 +101,22 @@ a:hover { text-decoration: underline; }
   font-size: .875rem;
   color: var(--clr-muted);
 }
+.contact a {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+}
+.icon {
+  flex-shrink: 0;
+  vertical-align: middle;
+}
 
 /* ── SECTIONS ────────────────────────────── */
-section { margin-top: 1.75rem; }
+html { scroll-behavior: smooth; }
+section {
+  margin-top: 1.75rem;
+  scroll-margin-top: 1.5rem;
+}
 
 section > h2 {
   font-size: .85rem;
@@ -280,6 +293,53 @@ ol.publications li.highlight-paper {
   border-radius: 100px;
 }
 
+/* ── FOOTER ──────────────────────────────── */
+.cv-footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--clr-border);
+  text-align: center;
+  font-size: .78rem;
+  color: #aaa;
+}
+
+/* ── BACK TO TOP ─────────────────────────── */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--clr-accent);
+  color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(.5rem);
+  transition: opacity .25s, transform .25s;
+}
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.back-to-top:hover {
+  text-decoration: none;
+  background: #164a84;
+}
+
+/* ── SPINNER / LOADING STATE ─────────────── */
+.controls button.loading {
+  opacity: .7;
+  cursor: wait;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.spinner { animation: spin .8s linear infinite; }
+
 /* ── RESPONSIVE ──────────────────────────── */
 @media (max-width: 640px) {
   html { font-size: 14px; }
@@ -320,4 +380,43 @@ ol.publications li.highlight-paper {
   .entry { break-inside: avoid; }
 
   a { color: var(--clr-accent); text-decoration: none; }
+}
+
+/* ── DARK MODE ───────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --clr-bg:       #121212;
+    --clr-surface:  #1e1e1e;
+    --clr-text:     #e4e4e4;
+    --clr-muted:    #a0a0a0;
+    --clr-accent:   #6baaed;
+    --clr-accent-bg:#1a2d42;
+    --clr-border:   #333;
+    --clr-tag-bg:   #1a2d42;
+    --clr-tag-text: #6baaed;
+  }
+
+  .award {
+    background: #2a2518;
+    border-left-color: #c9a825;
+  }
+
+  ol.publications li.highlight-paper {
+    background: #2a2518;
+    border-left-color: #c9a825;
+  }
+
+  .paper-badge {
+    color: #c9a825;
+    background: #352e14;
+  }
+
+  ul.detailed-list li {
+    border-bottom-color: #2a2a2a;
+  }
+
+  .cv-footer {
+    border-top-color: #333;
+    color: #666;
+  }
 }
