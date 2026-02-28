@@ -227,6 +227,24 @@ ol.publications li em {
   color: var(--clr-text);
 }
 
+ol.publications li.highlight-paper {
+  background: #fef9e7;
+  border-left: 3px solid #f0c929;
+  padding: .45rem .7rem;
+  border-radius: var(--radius);
+}
+
+.paper-badge {
+  display: inline-block;
+  margin-top: .25rem;
+  padding: .15rem .5rem;
+  font-size: .72rem;
+  font-weight: 600;
+  color: #7a5d00;
+  background: #fde68a;
+  border-radius: 100px;
+}
+
 /* ── RESPONSIVE ──────────────────────────── */
 @media (max-width: 640px) {
   html { font-size: 14px; }
