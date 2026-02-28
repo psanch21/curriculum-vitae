@@ -209,6 +209,41 @@ ul.compact li {
   font-weight: 500;
 }
 
+/* ── DETAILED LIST (Other, Reviewer, etc.) ── */
+ul.detailed-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul.detailed-list li {
+  display: flex;
+  gap: .75rem;
+  padding: .35rem 0;
+  font-size: .88rem;
+  color: var(--clr-muted);
+  border-bottom: 1px solid #f0f0f0;
+}
+ul.detailed-list li:last-child { border-bottom: none; }
+
+.dl-date {
+  flex-shrink: 0;
+  width: 5.5rem;
+  font-size: .8rem;
+  font-weight: 500;
+  color: var(--clr-muted);
+  text-align: right;
+  padding-top: .05rem;
+}
+.dl-content { flex: 1; }
+
+.dl-sub {
+  display: block;
+  font-size: .8rem;
+  color: #888;
+  font-style: italic;
+  margin-top: .1rem;
+}
+
 /* ── PUBLICATIONS ────────────────────────── */
 ol.publications {
   padding-left: 1.5rem;
@@ -254,6 +289,9 @@ ol.publications li.highlight-paper {
   .entry-header { flex-direction: column; gap: 0; }
   .date { margin-top: .15rem; }
   .date-inline { min-width: auto; display: block; }
+
+  ul.detailed-list li { flex-direction: column; gap: .1rem; }
+  .dl-date { width: auto; text-align: left; }
 }
 
 /* ── PRINT / PDF ─────────────────────────── */
