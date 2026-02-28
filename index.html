@@ -23,8 +23,7 @@
 
   <script>
     (function() {
-      var t = localStorage.getItem('theme');
-      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      var t = localStorage.getItem('theme') || 'light';
       document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
@@ -530,9 +529,7 @@
     const root = document.documentElement;
 
     function getPreferred() {
-      const stored = localStorage.getItem('theme');
-      if (stored) return stored;
-      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      return localStorage.getItem('theme') || 'light';
     }
 
     function applyTheme(theme) {
