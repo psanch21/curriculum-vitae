@@ -1,0 +1,267 @@
+/* ─────────────────────────────────────────────
+   CV — Pablo Sánchez Martín
+   ───────────────────────────────────────────── */
+
+:root {
+  --clr-bg:       #fdfdfd;
+  --clr-surface:  #ffffff;
+  --clr-text:     #1a1a1a;
+  --clr-muted:    #555;
+  --clr-accent:   #1e5fa6;
+  --clr-accent-bg:#eaf1fb;
+  --clr-border:   #e0e0e0;
+  --clr-tag-bg:   #eef3fa;
+  --clr-tag-text: #1e5fa6;
+
+  --font-sans:  'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Source Serif 4', 'Georgia', serif;
+
+  --page-max: 820px;
+  --radius:   6px;
+}
+
+/* ── RESET ───────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  font-size: 15px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--clr-text);
+  background: var(--clr-bg);
+  line-height: 1.6;
+  padding: 2rem 1rem 4rem;
+}
+
+a {
+  color: var(--clr-accent);
+  text-decoration: none;
+  transition: color .15s;
+}
+a:hover { text-decoration: underline; }
+
+/* ── CONTROLS BAR ────────────────────────── */
+.controls {
+  max-width: var(--page-max);
+  margin: 0 auto 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.controls button {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .55rem 1.1rem;
+  font: 500 .875rem/1 var(--font-sans);
+  color: var(--clr-accent);
+  background: var(--clr-accent-bg);
+  border: 1px solid var(--clr-accent);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background .15s, color .15s;
+}
+.controls button:hover {
+  background: var(--clr-accent);
+  color: #fff;
+}
+.controls button svg { flex-shrink: 0; }
+
+/* ── PAGE WRAPPER ────────────────────────── */
+.page {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: 10px;
+  padding: 2.5rem 3rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,.04);
+}
+
+/* ── HEADER ──────────────────────────────── */
+.header { text-align: center; margin-bottom: 1.75rem; }
+
+.header h1 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 2rem;
+  letter-spacing: -.02em;
+  margin-bottom: .55rem;
+}
+
+.contact {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .35rem 1.25rem;
+  font-size: .875rem;
+  color: var(--clr-muted);
+}
+
+/* ── SECTIONS ────────────────────────────── */
+section { margin-top: 1.75rem; }
+
+section > h2 {
+  font-size: .85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--clr-accent);
+  border-bottom: 2px solid var(--clr-accent);
+  padding-bottom: .3rem;
+  margin-bottom: .85rem;
+}
+
+section > p {
+  font-size: .9rem;
+  color: var(--clr-muted);
+}
+
+/* ── TAGS ────────────────────────────────── */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin-bottom: .6rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: .2rem .6rem;
+  font-size: .78rem;
+  font-weight: 500;
+  color: var(--clr-tag-text);
+  background: var(--clr-tag-bg);
+  border-radius: 100px;
+}
+
+/* ── ENTRIES (experience / education) ───── */
+.entry { margin-bottom: 1.1rem; }
+
+.entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.entry-header h3 {
+  font-size: .95rem;
+  font-weight: 600;
+}
+
+.role {
+  font-size: .88rem;
+  color: var(--clr-muted);
+  margin-top: .05rem;
+}
+
+.date {
+  white-space: nowrap;
+  font-size: .82rem;
+  color: var(--clr-muted);
+  flex-shrink: 0;
+}
+
+.subtitle {
+  font-size: .85rem;
+  color: var(--clr-muted);
+  font-style: italic;
+  margin-top: .2rem;
+}
+
+.entry ul {
+  margin: .35rem 0 0 1.25rem;
+  font-size: .88rem;
+  color: var(--clr-muted);
+}
+.entry li + li { margin-top: .15rem; }
+
+.award {
+  margin-top: .35rem;
+  padding: .4rem .7rem;
+  background: #fef9e7;
+  border-left: 3px solid #f0c929;
+  border-radius: var(--radius);
+  font-size: .85rem;
+}
+
+/* ── COMPACT TEACHING LIST ───────────────── */
+ul.compact {
+  list-style: none;
+  margin-left: 0;
+}
+ul.compact li {
+  font-size: .88rem;
+  color: var(--clr-muted);
+  padding: .15rem 0;
+}
+
+.date-inline {
+  display: inline-block;
+  min-width: 10.5rem;
+  font-size: .8rem;
+  color: var(--clr-muted);
+  font-weight: 500;
+}
+
+/* ── PUBLICATIONS ────────────────────────── */
+ol.publications {
+  padding-left: 1.5rem;
+}
+ol.publications li {
+  font-size: .85rem;
+  color: var(--clr-muted);
+  margin-bottom: .55rem;
+  line-height: 1.55;
+}
+ol.publications li strong {
+  color: var(--clr-text);
+}
+ol.publications li em {
+  font-family: var(--font-serif);
+  color: var(--clr-text);
+}
+
+/* ── RESPONSIVE ──────────────────────────── */
+@media (max-width: 640px) {
+  html { font-size: 14px; }
+
+  .page { padding: 1.5rem 1.25rem; border-radius: 0; border-left: 0; border-right: 0; }
+
+  .entry-header { flex-direction: column; gap: 0; }
+  .date { margin-top: .15rem; }
+  .date-inline { min-width: auto; display: block; }
+}
+
+/* ── PRINT / PDF ─────────────────────────── */
+.no-print { display: flex; }
+
+@media print {
+  .no-print { display: none !important; }
+
+  html { font-size: 12px; }
+
+  body {
+    background: #fff;
+    padding: 0;
+    margin: 0;
+  }
+
+  .page {
+    max-width: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  section { break-inside: avoid; }
+  .entry { break-inside: avoid; }
+
+  a { color: var(--clr-accent); text-decoration: none; }
+}
